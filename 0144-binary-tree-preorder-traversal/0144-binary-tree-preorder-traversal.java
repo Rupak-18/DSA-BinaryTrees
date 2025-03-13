@@ -14,7 +14,6 @@
  * }
  */
 class Solution {
-
     public void preorderHelper(TreeNode root, List<Integer> answer) {
         if(root == null) 
             return;
