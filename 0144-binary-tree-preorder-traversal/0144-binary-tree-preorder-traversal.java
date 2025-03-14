@@ -51,7 +51,7 @@ class Solution {
             if(node.right != null)
                 st.push(node.right);
             if(node.left != null)
-                  st.push(node.left);    
+                st.push(node.left);    
         }
     }
 
