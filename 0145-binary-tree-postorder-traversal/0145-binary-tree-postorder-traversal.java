@@ -34,27 +34,58 @@
 
 // ------ ITERATIVE METHOD (2 STACK) --------
 
+// class Solution {
+//     public List<Integer> postorderTraversal(TreeNode root) {
+//         List<Integer> answer = new ArrayList<>();
+//         Stack<TreeNode> st1 = new Stack<>();
+//         Stack<TreeNode> st2 = new Stack<>();
+//         if(root == null)
+//             return answer;
+
+//         TreeNode node = root;
+//         st1.push(node);
+
+//         while(!st1.isEmpty()) {
+//             node = st1.pop();
+//             st2.push(node);
+//             if(node.left != null)
+//                 st1.push(node.left);
+//             if(node.right != null)
+//                 st1.push(node.right);
+//         }
+//         while(!st2.isEmpty()) 
+//             answer.add(st2.pop().val);
+//         return answer;
+//     }
+// }
+
+
+// ------ ITERATIVE METHOD (1 STACK) --------
+
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> answer = new ArrayList<>();
-        Stack<TreeNode> st1 = new Stack<>();
-        Stack<TreeNode> st2 = new Stack<>();
-        if(root == null)
-            return answer;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode lastVisited = null;
+        TreeNode current = root;
 
-        TreeNode node = root;
-        st1.push(node);
-
-        while(!st1.isEmpty()) {
-            node = st1.pop();
-            st2.push(node);
-            if(node.left != null)
-                st1.push(node.left);
-            if(node.right != null)
-                st1.push(node.right);
+        while(current != null || !stack.isEmpty()) {
+            if(current != null) {
+                stack.push(current);
+                current = current.left; // Go left as much as possible
+            }
+            else {
+                TreeNode peekNode = stack.peek();
+                if(peekNode.right != null && peekNode.right != lastVisited) {
+                    current = peekNode.right; // Go to right child
+                }
+                else {
+                    answer.add(peekNode.val); // Process Node
+                    lastVisited = stack.pop();
+                }
+            }
         }
-        while(!st2.isEmpty()) 
-            answer.add(st2.pop().val);
+
         return answer;
     }
 }
