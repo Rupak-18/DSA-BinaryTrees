@@ -14,7 +14,7 @@
  * }
  */
 
-// ------ RECURSIVE METHOD (2 STACK) --------
+// ------ RECURSIVE METHOD  --------
 
 // class Solution {
 //     public void postorderHelper(TreeNode root, List<Integer> answer) {
