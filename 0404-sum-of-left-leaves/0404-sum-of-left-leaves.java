@@ -15,21 +15,20 @@
  */
 class Solution {
     public int sumOfLeftLeaves(TreeNode root) {
-        if(root == null || (root.left == null && root.right == null))
-            return 0;
         int[] sum = new int[1];
-        findSumOfLeftLeaves(root, sum, true);
+        dfs(root, sum, false);  // root is not a left leaf
         return sum[0];
     }
-    public int findSumOfLeftLeaves(TreeNode root, int[] sum, boolean flag) {
-        if(root == null)
-            return 0;
-        findSumOfLeftLeaves(root.left, sum, true);
-        findSumOfLeftLeaves(root.right, sum, false);
-        
-        if(flag && root.left == null && root.right == null)
-            sum[0] += root.val;
 
-        return 1;
+    private void dfs(TreeNode node, int[] sum, boolean isLeft) {
+        if (node == null) return;
+
+        if (node.left == null && node.right == null && isLeft) {
+            sum[0] += node.val;
+            return;
+        }
+
+        dfs(node.left, sum, true);   // mark left traversal
+        dfs(node.right, sum, false); // mark right traversal
     }
 }
