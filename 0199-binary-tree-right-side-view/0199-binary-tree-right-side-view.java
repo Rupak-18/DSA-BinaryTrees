@@ -15,9 +15,8 @@
  */
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
-        int level = 0;
         List<Integer> answer = new ArrayList<>();
-        rightSide(root, level, answer);
+        rightSide(root, 0, answer);
         return answer;
     }
     public void rightSide(TreeNode node, int level, List<Integer> answer) {
