@@ -25,7 +25,7 @@ class Solution {
 
         while(!queue.isEmpty()) {
             int size = queue.size();
-            List<Integer> temp = new ArrayList<>();
+            Deque<Integer> temp = new LinkedList<>();
            
             for(int i=0; i<size; i++) {
                 TreeNode node = queue.poll();
@@ -33,12 +33,14 @@ class Solution {
                     queue.offer(node.left);
                 if(node.right != null)
                     queue.offer(node.right);
-                temp.add(node.val);
+
+                if(flag == 0)
+                    temp.addLast(node.val);
+                else
+                    temp.addFirst(node.val);
             }
-            if(flag == 1)
-                Collections.reverse(temp);
             flag = flag ^ 1;
-            answer.add(temp);
+            answer.add(new ArrayList<>(temp));
         }
         return answer;
     }
