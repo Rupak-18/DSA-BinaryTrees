@@ -85,4 +85,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0124-binary-tree-maximum-path-sum](https://github.com/Rupak-18/DSA-BinaryTrees/tree/master/0124-binary-tree-maximum-path-sum) |
+## Array
+|  |
+| ------- |
+| [2366-maximum-bags-with-full-capacity-of-rocks](https://github.com/Rupak-18/DSA-BinaryTrees/tree/master/2366-maximum-bags-with-full-capacity-of-rocks) |
+## Greedy
+|  |
+| ------- |
+| [2366-maximum-bags-with-full-capacity-of-rocks](https://github.com/Rupak-18/DSA-BinaryTrees/tree/master/2366-maximum-bags-with-full-capacity-of-rocks) |
+## Sorting
+|  |
+| ------- |
+| [2366-maximum-bags-with-full-capacity-of-rocks](https://github.com/Rupak-18/DSA-BinaryTrees/tree/master/2366-maximum-bags-with-full-capacity-of-rocks) |
 <!---LeetCode Topics End-->
